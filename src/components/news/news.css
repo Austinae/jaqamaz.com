@@ -1,0 +1,48 @@
+.news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+  gap: 30px;
+}
+
+.nothing-here {
+  font-family: 'Montserrat';
+  color: white;
+}
+
+.music-image-container {
+  display: flex;
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+}
+
+.music-image-container h4 {
+  text-align: center;
+}
+
+.music-image {
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+/* Media queries */
+
+@media (max-width: 1080px) {
+  .news {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .music-image {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+}

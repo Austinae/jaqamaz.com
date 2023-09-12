@@ -1,4 +1,4 @@
-.section {
+.introduction {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -54,7 +54,7 @@
   font-family: 'Gravitas';
 }
 
-.description {
+.jaqamaz-summary {
   font-family: 'Montserrat';
   font-style: italic;
 }
@@ -65,6 +65,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  background-color: transparent;
 }
 
 .ac_btn {

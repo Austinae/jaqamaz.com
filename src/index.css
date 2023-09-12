@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic');
 
-html {
+html, body {
   background-color: black;
 }
 
@@ -26,11 +26,6 @@ code {
 @font-face {
   font-family: 'Gravitas';
   src: url('./assets//fonts/GravitasOne-Regular.ttf') format('truetype');
-}
-
-.navbar_stuffer {
-  height: 100px;
-  background-color: black;
 }
 
 /* cursor */

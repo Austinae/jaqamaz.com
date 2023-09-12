@@ -47,7 +47,7 @@ const Navigation = () => {
         <div className="container">
           <NavLink to="/">
             <div className="logo" onMouseEnter={playAudio} onMouseLeave={stopAudio}>
-              <img src={JaqamazLogo} alt="Jaqamaz" />
+              <img src={JaqamazLogo} alt="Jaqâmaz" />
             </div>
           </NavLink>
           <div className="menu-icon" onClick={() => setShowNavbar(!showNavbar)}>
@@ -62,15 +62,15 @@ const Navigation = () => {
             <ul>
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/about">About</NavLink></li>
-              <li><NavLink to="/dashboard">Events</NavLink></li>
+              <li><NavLink to="/news">News</NavLink></li>
             </ul>
           </div>
         </div>
       </nav>
       <Outlet />
-      <span className="made-with-love">
+      <div className="made-with-love">
         Made with ❤️ by <a href="//github.com/Austinae" target="_blank">Austinae 🇫🇷</a>
-      </span>
+      </div>
     </div>
   )
 }

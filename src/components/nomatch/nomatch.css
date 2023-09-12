@@ -1,0 +1,38 @@
+.no-match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+}
+
+.lost-image-container {
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+}
+
+.lost-image-container h4 {
+  text-align: center;
+}
+
+.lost-image {
+  width: 100%;
+  height: auto;
+  background-color: black;
+}
+
+/* Media queries */
+
+@media (max-width: 1080px) {
+}
+
+@media (max-width: 768px) {
+  .lost-image-container {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+}

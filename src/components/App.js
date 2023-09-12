@@ -7,6 +7,8 @@ import Home from './home/Home'
 import Navigation from './navigation/Navigation'
 import About from './about/About'
 import Loading from './loading/Loading'
+import News from './news/News'
+import NoMatch from './nomatch/NoMatch'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -44,31 +46,12 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="news" element={<News />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
     </>
   )
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
 }
 
 export default App
