@@ -51,13 +51,18 @@ const Navigation = () => {
             </div>
           </NavLink>
           <div className="menu-icon" onClick={() => setShowNavbar(!showNavbar)}>
-            <RxHamburgerMenu size={40} color='white' />
+            {/* <RxHamburgerMenu size={40} color='white' /> */}
+            <label>
+              <span className={`${showNavbar && 'active'}`}></span>
+              <span className={`${showNavbar && 'active'}`}></span>
+              <span className={`${showNavbar && 'active'}`}></span>
+            </label>
           </div>
           <div className={`nav-elements  ${showNavbar && "active"}`}>
             <ul>
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/about">About</NavLink></li>
-              <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+              <li><NavLink to="/dashboard">Events</NavLink></li>
             </ul>
           </div>
         </div>

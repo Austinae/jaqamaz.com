@@ -147,11 +147,6 @@
     max-width: 50%;
   }
 }
-@media (max-width: 768px) {
-  /* .synopsis {
-    max-width: 50%;
-  } */
-}
 
 @media (max-width: 600px) {
   .synopsis {
