@@ -1,0 +1,46 @@
+.music {
+  gap: 30px;
+  height: 100vh;
+  min-height: 700px;
+}
+
+.nothing-here {
+  font-family: 'Montserrat';
+  color: white;
+}
+
+.music-image-container {
+  aspect-ratio: 1;
+  width: 400px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.music-image-container h4 {
+  text-align: center;
+}
+
+.music-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Media queries */
+
+@media (max-width: 1080px) {
+  .music {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .music-image-container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .music-image-container {
+    width: 200px;
+  }
+}

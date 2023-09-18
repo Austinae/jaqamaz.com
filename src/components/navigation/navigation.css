@@ -81,7 +81,7 @@ body {
 }
 
 .made-with-love {
-  color: white;
+  color: black;
   font-size: 12px;
   display: block;
   position: fixed;
@@ -93,6 +93,7 @@ body {
 .made-with-love a {
   font-weight: 700;
   text-decoration: none;
+  color: black;
 }
 
 /* custom menu burger */
@@ -127,7 +128,6 @@ span.active:nth-of-type(2)  {
   transform:rotatez(-45deg)
 }
 
-
 span.active:nth-of-type(3)  {
   transform-origin:bottom;
   width:50%;
@@ -139,6 +139,10 @@ span.active:nth-of-type(3)  {
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
+  }
+
+  .nav-elements ul a {
+    font-size: 20px;
   }
 }
 
@@ -156,7 +160,7 @@ span.active:nth-of-type(3)  {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.8);
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;

@@ -1,8 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import './index.css'
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
+import 'animate.css/animate.min.css' // keep in mind animate.css will not work for users that have "prefers-reduced-motion" enabled
 
 import { BrowserRouter } from 'react-router-dom'
 

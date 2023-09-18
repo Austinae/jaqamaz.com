@@ -19,7 +19,7 @@ const Home = () => {
             Jaqâmaz is an acoustic live music band composed of 5 musicians mixing arabic music and Jazz
           </h3>
           <div className='home-cta-container'>
-            <Link to={"/news"}>
+            <Link to={"/music"}>
               <div className="home-cta ac_btn">
                 Our new album
                 <div className="ring one" />
@@ -36,7 +36,7 @@ const Home = () => {
           </div>
         </div>
         <div className="group-photo-container">
-          <img className="group-photo" src={GroupPhoto} />
+          <img className="group-photo" src={GroupPhoto} alt="Jaqâmaz group" />
         </div>
       </section>
     </>
