@@ -65,7 +65,7 @@ const Navigation = () => {
             <ul>
               <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/">Home</NavLink></li>
               <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/about">About</NavLink></li>
-              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/music">Music</NavLink></li>
+              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/news">News</NavLink></li>
             </ul>
           </div>
         </div>

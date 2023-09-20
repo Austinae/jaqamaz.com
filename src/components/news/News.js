@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
-import PageTitle from '../../components/basics/PageTitle'
-import './music.css'
+import PageTitle from '../basics/PageTitle'
+import './news.css'
 import MusicImage from '../../assets/images/music.gif'
 
 const Music = () => {
@@ -10,9 +10,10 @@ const Music = () => {
   }, [])
 
   return (
-    <div className="custom-bg">
-      <PageTitle title="Music" />
-      <section className="classic-flex music custom-bg">
+    <>
+      <PageTitle title="News" />
+      <div className="custom-bg" />
+      <section className="classic-flex news">
         <p className="nothing-here">
           <span style={{ fontWeight: 900, fontFamily: 'Montserrat' }}>"Danse intime"</span> album coming out soon
         </p>
@@ -24,7 +25,7 @@ const Music = () => {
         </div>
       </section>
       <hr className="separator" />
-      <section className="classic-flex custom-bg">
+      <section className="classic-flex">
         <iframe
           width="560"
           height="315"
@@ -36,7 +37,7 @@ const Music = () => {
         />
       </section>
       <hr className="separator" />
-      <section className="classic-flex custom-bg" style={{ marginBottom: 30 }}>
+      <section className="classic-flex" style={{ marginBottom: 30 }}>
         <iframe
           width="560"
           height="315"
@@ -47,7 +48,7 @@ const Music = () => {
           allowFullScreen
         />
       </section>
-    </div>
+    </>
   )
 }
 

@@ -7,7 +7,7 @@ import Home from './home/Home'
 import Navigation from './navigation/Navigation'
 import About from './about/About'
 import Loading from './loading/Loading'
-import Music from './music/Music'
+import News from './news/News'
 import NoMatch from './nomatch/NoMatch'
 
 const App = () => {
@@ -53,7 +53,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="music" element={<Music />} />
+          <Route path="news" element={<News />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

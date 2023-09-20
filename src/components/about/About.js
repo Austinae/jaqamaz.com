@@ -17,7 +17,8 @@ const About = () => {
   return (
     <>
       <PageTitle title="About" />
-      <section className="classic-flex about custom-bg">
+      <div className="custom-bg" />
+      <section className="classic-flex about">
         <div className="jaqamaz-description">
           <div>
             What happens when you mix the rhythmic claves of South America with the lyrical melodies of classical music?
@@ -43,7 +44,7 @@ const About = () => {
           <div className="arrow"></div>
         </div>
       </section>
-        <section className="classic-flex the-team custom-bg">
+        <section className="classic-flex the-team">
           <div>
             <ScrollAnimation animateIn="animate__shakeY" animateOnce className="classic-flex">
               <h1 className="artists-header">The team</h1>
@@ -59,7 +60,7 @@ const About = () => {
                 </div>
               </div>
             </ScrollAnimation>
-            <hr className="separator custom-bg" />
+            <hr className="separator" />
             <ScrollAnimation animateIn="animate__backInLeft" animateOnce className="classic-flex">
               <div className="artist">
                 <img src={Shaya} className="artist-img" alt="Shaya Feldman"/>
@@ -71,7 +72,7 @@ const About = () => {
                 </div>
               </div>
             </ScrollAnimation>
-            <hr className="separator custom-bg" />
+            <hr className="separator" />
             <ScrollAnimation animateIn="animate__backInRight" animateOnce className="classic-flex">
               <div className="artist">
                 <img src={Joachim} className="artist-img" alt="Joachim ségalard"/>
@@ -83,7 +84,7 @@ const About = () => {
                 </div>
               </div>
             </ScrollAnimation>
-            <hr className="separator custom-bg" />
+            <hr className="separator" />
             <ScrollAnimation animateIn="animate__backInLeft" animateOnce className="classic-flex">
               <div className="artist">
                 <img src={Juliette} className="artist-img" alt="Juliette Lacroix"/>
@@ -95,7 +96,7 @@ const About = () => {
                 </div>
               </div>
             </ScrollAnimation>
-            <hr className="separator custom-bg" />
+            <hr className="separator" />
             <ScrollAnimation animateIn="animate__backInRight" animateOnce className="classic-flex">
               <div className="artist">
                 <img src={Hussein} className="artist-img" alt="Hussein Rassim"/>
@@ -110,7 +111,7 @@ const About = () => {
           </div>
         </section>
       <hr style={{ margin: 0, borderColor: 'black'}}></hr>
-      <section className="classic-flex custom-bg">
+      <div className="classic-flex bg-gradient">
         <div className="classic-flex cta-mission-container">
           <h2>Available for</h2>
           <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">Live Performances</a></div>
@@ -119,7 +120,7 @@ const About = () => {
           <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">Interviews</a></div>
           <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">Workshops</a></div>
         </div>
-      </section>
+      </div>
     </>
   )
 }

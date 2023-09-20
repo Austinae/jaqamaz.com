@@ -1,4 +1,4 @@
-.music {
+.news {
   gap: 30px;
   height: 100vh;
   min-height: 700px;
@@ -28,7 +28,7 @@
 /* Media queries */
 
 @media (max-width: 1080px) {
-  .music {
+  .news {
     flex-direction: column;
   }
 }

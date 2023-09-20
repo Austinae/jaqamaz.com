@@ -19,9 +19,9 @@ const Home = () => {
             Jaqâmaz is an acoustic live music band composed of 5 musicians mixing arabic music and Jazz
           </h3>
           <div className='home-cta-container'>
-            <Link to={"/music"}>
+            <Link to={"/news"}>
               <div className="home-cta ac_btn">
-                Our new album
+                What's new?
                 <div className="ring one" />
                 <div className="ring two" />
                 <div className="ring three" />

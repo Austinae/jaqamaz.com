@@ -149,6 +149,7 @@
 	transition: 0.5s;
 	transition-delay: 0.5;
 }
+
 .cta-mission-button:hover::after /*lightup button*/ {
 	top: 0;
 	height: 50%;
