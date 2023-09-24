@@ -24,14 +24,28 @@
   left: 50px;
 }
 
+.wave-alt {
+	width: 100%;
+	position: relative;
+	transform: translate(0, 10px);
+}
+
+.wave-alt-2 {
+	width: 100%;
+	position: relative;
+	transform: translate(0, -10px);
+}
+
 .the-team {
   position: relative;
   padding-bottom: 30px;
   display: block;
+	background: linear-gradient(#996667, #e3a1a3);
 }
 
 .artists-header {
   font-size: 3rem;
+  padding-bottom: 50px;
 }
 
 .artist {
@@ -124,7 +138,7 @@
 	bottom: -5px;
 	width: 30px;
 	height: 10px;
-	background: #AD7577;
+	background: var(--main-bg-color);
 	border-radius: 10px;
 	transition: 0.5s;
 	transition-delay: 0.5;
@@ -144,7 +158,7 @@
 	top: -5px;
 	width: 30px;
 	height: 10px;
-	background: #AD7577;
+	background: var(--main-bg-color);
 	border-radius: 10px;
 	transition: 0.5s;
 	transition-delay: 0.5;

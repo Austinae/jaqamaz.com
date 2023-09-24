@@ -1,156 +1,118 @@
-.introduction {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  display: block;
-  float: left;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  background-position: center top;
-}
-
 .group-photo-container {
   width: 100%;
-  height: 100vh;
-  display: block;
   position: relative;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .group-photo {
-  color: #000;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  max-width: 100%;
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.synopsis {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 1;
-  max-width: 30%;
-  padding: 5px;
-  background-color: rgba(0,0,0,.3);
-}
-
-.title {
-  font-family: 'Gravitas';
-}
-
-.jaqamaz-summary {
-  font-family: 'Montserrat';
-  font-style: italic;
-}
-
-/* Home button CTAs */
-.home-cta-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: transparent;
-}
-
-.ac_btn {
-  padding: 4px 19px;
-  color: black;
-  position: relative;
-  border: white 2px solid;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  cursor: pointer;
-  border-radius: 0;
-  margin-right: 20px;
-}
-
-.ac_btn a {
-  text-decoration: none;
-}
-
-.ac_btn:hover {
-  box-shadow: 8px 8px 0px white, -8px -8px 0px white;
-}
-
-.ac_btn:hover .one {
-  opacity: 1;
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .two {
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .three {
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn:hover .four {
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.ac_btn .ring {
   width: 100%;
   height: 100%;
+}
+
+.wave {
   position: absolute;
-  background: transparent;
-  top: 0;
-  left: 0;
-  transform: translate3d(0px, 90px, 0px);
+  bottom: -8%;
+  width: 100%;
 }
 
-.ac_btn .one {
-  background-color: #000;
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -3;
-  z-index: -4;
+.home {
+	background-color: #996667;
+  flex-direction: column;
 }
 
-.ac_btn .two {
-  background-color: black;
-  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -3;
+.home h3 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  margin: 0;
 }
 
-.ac_btn .three {
-  background-color: white;
-  z-index: -2;
-  transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -3;
+#jaqamaz-title {
+  font-family: 'Gravitas';
+  padding: 0px 0px 15px 0px;
 }
 
-.home-cta {
-  background: white; 
-  color: black;
-  text-align: center;
+.social-media-container {
+  flex-direction: row;
+  gap: 30px;
+  padding: 15px 0px;
 }
 
-/* Media queries */
+.social-media-container a {
+  display: block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.social-media-container a img {
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.social-media-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+#yt-videos {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.yt-wrapper {
+	position: relative;
+	overflow: hidden;
+  padding-top: 56.25%;
+  width: 100%;
+  height: 0;
+}
+
+.yt-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.synopsis-and-links {
+  max-width: 600px;
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+#synopsis {
+  font-size: 1.23em;
+}
+
+.links {
+  justify-content: flex-end;
+  flex-direction: column;
+}
 
 @media (max-width: 1080px) {
-  .synopsis {
-    max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .synopsis-and-links {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .links {
+    justify-content: center;
+  }
+
+  #synopsis {
+    font-size: 1em;
+    text-align: center;
   }
 }
 
 @media (max-width: 600px) {
-  .synopsis {
-    max-width: 80%;
+  .social-media-container {
+    gap: 25px;
   }
 }

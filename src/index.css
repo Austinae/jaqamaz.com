@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic');
 
 html, body {
-  background-color: #393037;
+  background-color: transparent;
 }
 
 * {
   font-family: 'Montserrat';
   color: white;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 body {
@@ -16,6 +20,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --main-bg-color: #AD7577;
+  --secondary-bg-color: #C8F3FD;
+}
+
+img {
+  vertical-align: top;
 }
 
 code {
@@ -48,7 +61,7 @@ code {
 .arrow {
 	width: 0px;
 	height: 40px;
-	border: 2px solid #AD7577;
+	border: 2px solid var(--main-bg-color);
 	position: relative;
 	animation: scroll 1.5s infinite;
 	-webkit-animation: scroll 1.5s infinite;
@@ -60,7 +73,7 @@ code {
     left: -5px;
     width: 1px;
     height: 10px;
-    border-top: 10px solid #AD7577;
+    border-top: 10px solid var(--main-bg-color);
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
 	}
@@ -78,16 +91,8 @@ code {
 	60% { height: 40px; }
 }
 
-@media (max-width: 640px) {
-  .arrow {
-    display: none;
-  }
-}
-
-@media (max-height: 700px) {
-  .arrow {
-    display: none;
-  }
+.classic-bg {
+  background-color: var(--main-bg-color) !important;
 }
 
 .classic-flex {
@@ -108,8 +113,8 @@ code {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: #624e5e;
-  background-image: url(./assets/images/noise.png)
+  background: #5a2d5a;
+  background-image: url(./assets/images/noise.svg);
 }
 
 .custom-bg:after {
@@ -119,5 +124,21 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  background: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,.7));
+  background: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,.8));
+}
+
+@media (max-width: 640px) {
+  .arrow {
+    display: none;
+  }
+
+  .custom-bg-svg:after {
+    background: radial-gradient(rgba(0,0,0,.1), rgba(0,0,0,0.7));
+  }
+}
+
+@media (max-height: 700px) {
+  .arrow {
+    display: none;
+  }
 }

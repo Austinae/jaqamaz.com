@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #fcfcfc;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -40,6 +33,21 @@ body {
   display: none;
 }
 
+.nav-elements {
+  display: flex;
+  align-items: center;
+}
+
+.settings-trigger {
+  transition: transform 0.5s;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.settings-trigger:hover {
+  transform: scale(1.1);
+}
+
 .nav-elements ul {
   display: flex;
   justify-content: space-between;
@@ -57,7 +65,15 @@ body {
   text-decoration: none;
 }
 
+.nav-elements ul li div {
+  font-size: 20px;
+  font-family: 'Gravitas';
+  color: white;
+  text-decoration: none;
+}
+
 .nav-elements ul li {
+  margin-left: 30px;
   transition: transform 0.5s;
 }
 
@@ -81,7 +97,7 @@ body {
 }
 
 .made-with-love {
-  color: black;
+  color: rgba(200,200,200,.9);
   font-size: 12px;
   display: block;
   position: fixed;
@@ -93,7 +109,7 @@ body {
 .made-with-love a {
   font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: rgba(200,200,200,.9);
 }
 
 /* custom menu burger */
@@ -134,15 +150,66 @@ span.active:nth-of-type(3)  {
   transform: translate(17px,-6.2px) rotatez(45deg);
 }
 
-/* media queries */
 
+.footer {
+  background-color: #0a0416;
+  padding-bottom: 8px;
+  padding-top: 10px;
+}
+
+.developed-by {
+  flex: 0 0 auto;
+  width: 33.33%;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.developed-by h3 {
+  font-size: 1em;
+  color: 'white';
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.developed-by ul li {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.developed-by ul li a {
+  color: white;
+  text-decoration: underline;
+}
+
+.language-selector {
+  background-color: black;
+}
+
+/* media queries */
 @media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .developed-by {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }  
+
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
   }
 
   .nav-elements ul a {
     font-size: 20px;
+  }
+
+  .developed-by h3 {
+    font-size: .6em;
   }
 }
 
@@ -157,6 +224,7 @@ span.active:nth-of-type(3)  {
   }
 
   .nav-elements {
+    display: block;
     position: absolute;
     right: 0;
     top: 60px;
