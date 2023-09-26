@@ -1,6 +1,7 @@
 import PageTitle from '../basics/PageTitle'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
+import './home.css'
 import GroupPhoto from '../../assets/images/group_photo.jpg'
 import Wave from '../../assets/images/wave.svg'
 import Instagram from '../../assets/images/icons/instagram.svg'
@@ -9,7 +10,8 @@ import Spotify from '../../assets/images/icons/spotify.svg'
 import Youtube from '../../assets/images/icons/youtube.svg'
 import AppleMusic from '../../assets/images/icons/applemusic.svg'
 import SoundCloud from '../../assets/images/icons/soundcloud.svg'
-import './home.css'
+import MusicImage from '../../assets/images/cover_art.png'
+import JaqamazLogo from '../../assets/images/jaqamaz_logo.svg'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -34,15 +36,15 @@ const Home = () => {
           <div className="classic-flex links">
             <h3>{t('home.listen')}</h3>
             <div className="classic-flex social-media-container">
-              <a href=""><img src={Spotify} /></a>
+              <a href=""><img src={Spotify} alt="spotify" /></a>
               <a href="https://www.youtube.com/@Jaqamaz"><img src={Youtube} /></a>
-              <a href=""><img src={AppleMusic} /></a>
-              <a href=""><img src={SoundCloud} /></a>
+              <a href=""><img src={AppleMusic} alt="applemusic" /></a>
+              <a href=""><img src={SoundCloud} alt="soundcloud" /></a>
             </div>
             <h3>{t('home.follow')}</h3>
             <div className="classic-flex social-media-container">
-              <a href="https://www.instagram.com/jaqamaz/"><img src={Instagram} /></a>
-              <a href="https://www.facebook.com/profile.php?id=100092573536653"><img src={Facebook} /></a>
+              <a href="https://www.instagram.com/jaqamaz/"><img src={Instagram} alt="instagram" /></a>
+              <a href="https://www.facebook.com/profile.php?id=100092573536653"><img src={Facebook} alt="facebook" /></a>
             </div>
           </div>
         </div>
@@ -52,21 +54,31 @@ const Home = () => {
             <iframe src="https://www.youtube.com/embed/xuOg-fr9cVY?si=k2U2Ft3-5lTrUSNX" title="Jaqâmaz-Sahara" allowFullScreen></iframe>
           </div>
         </div>
-
-        {/* <div className="classic-flex yt-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/xuOg-fr9cVY?si=k2U2Ft3-5lTrUSNX" title="Jaqâmaz-Sahara" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+        <h2>{t('albums')}</h2>
+        <div id="yt-videos classic-flex">
+          <p className="nothing-here" style={{ textAlign: 'center', marginTop: '20px', marginBottom: '20px' }}>
+            <Trans i18nKey="events.danse-ultime" /> <span> ≈ 2024/02</span>
+          </p>
         </div>
-        <hr className="separator" />
-        <section className="classic-flex" style={{ marginBottom: 30 }}>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/2j6BeyaOcZo?si=eqEJDERDdDDiE8vd" title="Jaqâmaz-Ya-Lille" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/>
-        </section>
-        <div className="classic-flex social-media-container">
-          <a href="">
-            <div className="social-media-icon classic-flex">
-              <img src={Instagram} />
-            </div>
-          </a>
-        </div> */}
+        <div className='classic-flex album'>
+          <div className="classic-flex music-image-container">
+            <img src={MusicImage} className="music-image" alt="music" />
+          </div>
+          <div>
+            <h4 style={{ textDecoration: 'underline', marginBottom: '10px'}}>Tracklist</h4>
+            <ol className='tracklist'>
+              <li>1. Sahara</li>
+              <li>2. Pyramide</li>
+              <li>3. Anyway</li>
+              <li>4. Julietta</li>
+              <li>5. Tony on March</li>
+              <li>6. Ya lille</li>
+              <li>7. El Furat</li>
+              <li>8. Intimate Danse</li>
+              <li>9. Hanine</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </>
   )

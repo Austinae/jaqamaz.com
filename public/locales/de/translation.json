@@ -26,8 +26,8 @@
     "follow": "Folgen",
     "last-video": "Letztes Video"
   },
-  "news": {
-    "title": "Nachricht",
+  "events": {
+    "title": "Konzerte",
     "danse-ultime": "<strong>\"Danse intime\"</strong> album kommt bald heraus"
   },
   "footer": {
@@ -38,5 +38,11 @@
     "error": "Fehler 404, Sie sind verloren"
   },
   "language": "Sprache",
-  "exit": "Ausfahrt"
+  "exit": "Ausfahrt",
+  "albums": "Alben",
+  "error-message": "Es ist ein Fehler aufgetreten, bitte entschuldigen Sie die Unannehmlichkeiten",
+  "error": "Fehler",
+  "find-out-more": "Weitere Informationen",
+  "upcoming-events": "Kommende Veranstaltungen",
+  "past-events": "Vergangene Ereignisse"
 }

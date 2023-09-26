@@ -26,8 +26,8 @@
     "follow": "Follow",
     "last-video": "Last video"
   },
-  "news": {
-    "title": "News",
+  "events": {
+    "title": "Events",
     "danse-ultime": "<strong>\"Danse intime\"</strong> album coming out soon"
   },
   "footer": {
@@ -38,5 +38,11 @@
     "error": "Error 404, you're lost"
   },
   "language": "Language",
-  "exit": "Exit"
+  "exit": "Exit",
+  "albums": "Albums",
+  "error-message": "An error occured, sorry for the inconvenience",
+  "error": "Error",
+  "find-out-more": "Find out more",
+  "upcoming-events": "Upcoming Events",
+  "past-events": "Past Events"
 }

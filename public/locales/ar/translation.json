@@ -26,7 +26,7 @@
     "follow": "يتبع",
     "last-video": "الفيديو الأخير"
   },
-  "news": {
+  "events": {
     "title": "أخبار",
     "danse-ultime": "<strong>\"الرقص في الوقت المناسب\"</strong> الألبوم سيصدر قريبا"
   },
@@ -38,5 +38,11 @@
     "error": "خطأ 404، لقد فقدت"
   },
   "language": "لغة",
-  "exit": "مخرج"
+  "exit": "مخرج",
+  "albums": "ألبومات",
+  "error-message": "حدث خطأ، آسف على الإزعاج",
+  "error": "خطأ",
+  "find-out-more": "اكتشف المزيد",
+  "upcoming-events": "الأحداث القادمة",
+  "past-events": "الأحداث الماضية"
 }

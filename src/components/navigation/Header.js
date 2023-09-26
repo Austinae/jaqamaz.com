@@ -90,7 +90,7 @@ const Header = () => {
             <ul>
               <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/">{t('home.title')}</NavLink></li>
               <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/about">{t('about.title')}</NavLink></li>
-              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/news">{t('news.title')}</NavLink></li>
+              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/events">{t('events.title')}</NavLink></li>
             </ul>
             <div className="settings-trigger" onClick={() => setIsSettingsModalOpen(true)}>
               <MdLanguage size={30} color="white" />

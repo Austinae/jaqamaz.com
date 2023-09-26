@@ -1,6 +1,6 @@
 {
   "about": {
-    "title": "A propos de",
+    "title": "Nous",
     "jaqamaz-description-1": "Que se passe-t-il lorsque l'on mélange les claves rythmiques de l'Amérique du Sud avec les mélodies lyriques de la musique classique ? Ou lorsque vous insufflez les harmonies vibrantes du jazz aux inflexions passionnées des maqâms arabes ?",
     "jaqamaz-description-2": "<strong>Jaqâmaz</strong> est un point de rencontre où convergent cinq mondes.",
     "jaqamaz-description-3": "Ce groupe témoigne de la puissance de la <strong>diversité culturelle</strong>, chaque membre apportant son expérience et ses influences uniques pour créer quelque chose d'entièrement nouveau. Le groupe se nourrit de la riche tapisserie tissée par leurs cultures distinctes, et chaque membre joue un rôle essentiel dans la recherche de l'équilibre parfait au sein de l'ensemble.",
@@ -26,8 +26,8 @@
     "follow": "Suivre",
     "last-video": "Dernière vidéo"
   },
-  "news": {
-    "title": "Actualités",
+  "events": {
+    "title": "Concerts",
     "danse-ultime": "L'album <strong>\"Danse intime\"</strong> sortira bientôt"
   },
   "footer": {
@@ -38,5 +38,11 @@
     "error": "Erreur 404, vous êtes perdu"
   },
   "language": "Langue",
-  "exit": "Sortie"
+  "exit": "Sortie",
+  "albums": "Albums",
+  "error-message": "Une erreur s'est produite, désolé pour la gêne occasionnée",
+  "error": "Erreur",
+  "find-out-more": "En savoir plus",
+  "upcoming-events": "Événements à venir",
+  "past-events": "Événements passés"
 }
