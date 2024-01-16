@@ -17,23 +17,21 @@ const Countdown = ({ date }) => {
   const [timeRemaining, setTimeRemaining] = useState({ diff: timeNow, parsedTime: decomposeTime(timeNow)})
   
   useEffect(() => {
-    if (timeNow > 0) {
-      const timeInterval = setInterval(() => {
-        setTimeRemaining((prevTimeRemaining) => {
-          const timeDiff = prevTimeRemaining.diff - 1000
-          const newTimeRemaining = {diff: timeDiff, parsedTime: decomposeTime(timeDiff)}
-  
-          if (timeDiff <= 0) clearInterval(timeInterval)
-          if (timeRemaining.parsedTime.days != newTimeRemaining.parsedTime.days) addFlip(document.querySelector(".days .flip-card"), newTimeRemaining.parsedTime.days)
-          if (timeRemaining.parsedTime.hours != newTimeRemaining.parsedTime.hours) addFlip(document.querySelector(".hours .flip-card"), newTimeRemaining.parsedTime.hours)
-          if (timeRemaining.parsedTime.minutes != newTimeRemaining.parsedTime.minutes) addFlip(document.querySelector(".minutes .flip-card"), newTimeRemaining.parsedTime.minutes)
-          if (timeRemaining.parsedTime.seconds != newTimeRemaining.parsedTime.seconds) addFlip(document.querySelector(".seconds .flip-card"), newTimeRemaining.parsedTime.seconds)
-  
-          return newTimeRemaining
-        })
-      }, 1000)
-      return () => clearInterval(timeInterval)
-    }
+    const timeInterval = setInterval(() => {
+      setTimeRemaining((prevTimeRemaining) => {
+        const timeDiff = prevTimeRemaining.diff - 1000
+        const newTimeRemaining = { diff: timeDiff, parsedTime: decomposeTime(timeDiff) }
+      
+        if (timeDiff <= 0) clearInterval(timeInterval)
+        if (prevTimeRemaining.parsedTime.days !== newTimeRemaining.parsedTime.days) addFlip(document.querySelector(".days .flip-card"), newTimeRemaining.parsedTime.days)
+        if (prevTimeRemaining.parsedTime.hours !== newTimeRemaining.parsedTime.hours) addFlip(document.querySelector(".hours .flip-card"), newTimeRemaining.parsedTime.hours)
+        if (prevTimeRemaining.parsedTime.minutes !== newTimeRemaining.parsedTime.minutes) addFlip(document.querySelector(".minutes .flip-card"), newTimeRemaining.parsedTime.minutes)
+        if (prevTimeRemaining.parsedTime.seconds !== newTimeRemaining.parsedTime.seconds) addFlip(document.querySelector(".seconds .flip-card"), newTimeRemaining.parsedTime.seconds)
+      
+        return newTimeRemaining
+      })
+    }, 1000)
+    return () => clearInterval(timeInterval)
   }, [])
 
   if (timeNow <= 0) return null
