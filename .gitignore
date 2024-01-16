@@ -13,3 +13,5 @@ yarn-error.log*
 /.changelog
 .npm/
 content/
+.env
+npm_list.txt

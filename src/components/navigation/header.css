@@ -1,0 +1,18 @@
+
+.language-selector {
+  height: 45px;
+  width: 45px;
+  margin-left:  40px;
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #292C3F;
+  outline: none;
+}
+
+.language-selector:hover {
+  box-shadow: 0 3px 8px #646464;
+}

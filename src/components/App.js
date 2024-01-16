@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
-
 import Cursor  from './cursor/Cursor'
 import Home from './home/Home'
 import Navigation from './navigation/Navigation'
@@ -12,8 +7,6 @@ import About from './about/About'
 import Loading from './loading/Loading'
 import NoMatch from './nomatch/NoMatch'
 import Events from './events/Events'
-
-const queryClient = new QueryClient()
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -26,7 +19,7 @@ const App = () => {
 
   
   return (
-    <QueryClientProvider client={queryClient}>
+    <div style={{backgroundColor: "black"}}>
       <div className="cursor__dot">
         <Cursor
           innerSize={15}
@@ -45,7 +38,7 @@ const App = () => {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </QueryClientProvider>
+    </div>
   )
 }
 

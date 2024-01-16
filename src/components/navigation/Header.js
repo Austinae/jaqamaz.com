@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import ReactModal, { } from 'react-modal'
-import Select from 'react-select'
 import { MdLanguage } from 'react-icons/md'
 import { useTranslation } from 'react-i18next'
 
+import FRFlag from '../../assets/images/FR.svg'
+import GBFlag from '../../assets/images/GB.svg'
+import './header.css'
 import JaqamazLogo from '../../assets/images/jaqamaz_logo.svg'
 import BirdSinging from '../../assets/audio/bulbul.mp3'
 
@@ -15,21 +16,9 @@ const options = [
   { value: 'fr', label: "Français - fr"}
 ]
 
-const colourStyles = {
-  control: styles => ({ ...styles, backgroundColor: 'white' }),
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    return {
-      ...styles,
-      backgroundColor: isSelected ? "rgba(153, 102, 103, .5)" :  "white",
-      color: 'black',
-    }
-  },
-}
-
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false)
   const [userInteracted, setUserInteracted] = useState(false)
-  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
   const { t, i18n } = useTranslation()
   const [language, setLanguage] = useState(options.filter((item)=>item.value==i18n.language))
 
@@ -68,73 +57,36 @@ const Header = () => {
   }, [])
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="container">
-          <NavLink to="/">
-            <div className="logo" onMouseEnter={playAudio} onMouseLeave={stopAudio}>
-              <img src={JaqamazLogo} alt="Jaqâmaz" />
-            </div>
-          </NavLink>
-          <div className="menu-icon" onClick={() => setShowNavbar(!showNavbar)}>
-            {/* <RxHamburgerMenu size={40} color='white' />
-              instead of going for an icon I decided to go for a custom animated one which follows below
-            */}
-            <label>
-              <span className={`${showNavbar && 'active'}`}></span>
-              <span className={`${showNavbar && 'active'}`}></span>
-              <span className={`${showNavbar && 'active'}`}></span>
-            </label>
+    <nav className="navbar">
+      <div className="container">
+        <NavLink to="/">
+          <div className="logo" onMouseEnter={playAudio} onMouseLeave={stopAudio}>
+            <img src={JaqamazLogo} alt="Jaqâmaz" />
           </div>
-          <div className={`nav-elements  ${showNavbar && "active"}`}>
-            <ul>
-              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/">{t('home.title')}</NavLink></li>
-              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/about">{t('about.title')}</NavLink></li>
-              <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/events">{t('events.title')}</NavLink></li>
-            </ul>
-            <div className="settings-trigger" onClick={() => setIsSettingsModalOpen(true)}>
-              <MdLanguage size={30} color="white" />
-            </div>
+        </NavLink>
+        <div className="menu-icon" onClick={() => setShowNavbar(!showNavbar)}>
+          {/* <RxHamburgerMenu size={40} color='white' />
+            instead of going for an icon I decided to go for a custom animated one which follows below
+          */}
+          <label>
+            <span className={`${showNavbar && 'active'}`}></span>
+            <span className={`${showNavbar && 'active'}`}></span>
+            <span className={`${showNavbar && 'active'}`}></span>
+          </label>
+        </div>
+        <div className={`nav-elements  ${showNavbar && "active"}`}>
+          <ul>
+            <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/">{t('home.title')}</NavLink></li>
+            <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/about">Team</NavLink></li>
+            <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/events">{t('events.title')}</NavLink></li>
+          </ul>
+          <div className="language-selector" onClick={() => {i18n.changeLanguage(language == "en" ? "fr" : "en"); setLanguage(language == "en" ? "fr" : "en")}}>
+            <img style={{width: '30px'}} src={language == "en" ? GBFlag : FRFlag}/>
           </div>
         </div>
-      </nav>
-      <ReactModal
-        shouldCloseOnOverlayClick
-        autoFocus
-        isOpen={isSettingsModalOpen}
-        contentLabel="settings modal"
-        ariaHideApp={false}
-        style={{
-          overlay: {
-            backgroundColor: "rgba(255,255,255,.6)",
-            zIndex: 100,
-            inset: '0px',
-          },
-          content: {
-            maxWidth: "300px",
-            backgroundColor: "#996667",
-            marginLeft: "auto",
-            padding: "10px 0px 10px 0px",
-          }
-        }}
-      >
-        <div className="classic-flex" style={{ flexDirection: 'column', justifyContent: 'space-between', height: '100%'}}>
-          <div>
-            <h1 style={{ color: 'white', marginBottom: "20px" }}>{t('language')}</h1>
-            <Select
-              options={options}
-              onChange={(lang) => {i18n.changeLanguage(lang.value); setLanguage(lang)}}
-              styles={colourStyles}
-              isMulti={false}
-              value={language}
-            />
-          </div>
-          <div onClick={() => setIsSettingsModalOpen(false)} style={{ padding: '10px 20px 10px 20px', background: 'white', color: 'black', fontWeight: 'bold'}}>
-            {t('exit')}
-          </div>
-        </div>
-      </ReactModal>
-    </>
+      </div>
+    </nav>
+
   )
 }
 

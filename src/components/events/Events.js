@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { HiLocationMarker } from 'react-icons/hi'
 import { GiTicket } from 'react-icons/gi'
 
 import ErrorPage from '../ErrorPage'
 import './events.css'
+import './cta.css'
 import PageTitle from '../basics/PageTitle'
 import Loading from '../loading/Loading'
 
 const currentDate = new Date()
 
-const getImageSrc = (photoUrl) => `https://api.jaqamaz.com/manage/${photoUrl}`
+const baseUrl = process.env.REACT_APP_ENVIRONMENT == "production" ? 'https://api.jaqamaz.com/manage' :  'http://localhost:3001'
+
+const getImageSrc = (photoUrl) => `${baseUrl}/${photoUrl}`
 
 const formatDate = (inputDate) => {
   const date = new Date(inputDate)
@@ -80,6 +81,7 @@ const DisplayEvents = ({events}) => {
                   <div>
                     {(event.photo && event.photo !== '') && (
                       <img
+                        alt="event-poster"
                         src={getImageSrc(event.photo)}
                         className="event-poster"
                       />
@@ -94,32 +96,47 @@ const DisplayEvents = ({events}) => {
   )
 }
 
-const fetchEvents = async () => {
-  return axios
-    .get('https://api.jaqamaz.com/manage/events')
-    .then((res) => { return res.data })
-}
-
-const Music = () => {
+const Events = () => {
   const { t } = useTranslation()
-  const { isLoading, isError, data, error } = useQuery(['events'], fetchEvents)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [events, setEvents] = useState(null)
   const [pastEvents, setPastEvents] = useState({})
   const [futureEvents, setFutureEvents] = useState({})
 
   useEffect(() => {
-    if (!isLoading) {
-      const reducedData = groupEventsByYearAndMonth(data)
+    const fetchData = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch(`${baseUrl}/events`)
+        const result = await response.json()
+
+        setEvents(result)
+        setLoading(false)
+      } catch (error) {
+        console.error('Error fetching data:', error)
+        setError(error)
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  useEffect(() => {
+    if (!loading) {
+      const reducedData = groupEventsByYearAndMonth(events)
       setPastEvents(reducedData.pastEvents)
       setFutureEvents(reducedData.futureEvents)
     }
-  }, [isLoading])
+  }, [loading])
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  if (isError) return <ErrorPage error={error} />
-  if (isLoading) return <Loading isLoading={true} />
+  if (error) return <ErrorPage error={error} />
+  if (loading) return <Loading isLoading={true} />
 
   return (
     <>
@@ -128,13 +145,23 @@ const Music = () => {
       <section className="classic-flex events" style={{ flexDirection: 'column'}}>
         <div className="events-container">
           <h2>{t('upcoming-events')}</h2>
-          <DisplayEvents events={futureEvents} />
+          {Object.keys(futureEvents).length == 0 ? "No upcoming events" : <DisplayEvents events={futureEvents} />}
           <h2>{t('past-events')}</h2>
           <DisplayEvents events={pastEvents} />
+        </div>
+        <div className="classic-flex">
+          <div className="classic-flex cta-mission-container">
+            <h2 style={{marginBottom: "60px"}}>{t('about.available-for')}</h2>
+            <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">{t('about.live-performances')}</a></div>
+            <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">{t('about.festivals')}</a></div>
+            <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">{t('about.collaborations')}</a></div>
+            <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">{t('about.interviews')}</a></div>
+            <div className="cta-mission-button"><a href="mailto:jaqamaz@gmail.com">{t('about.workshops')}</a></div>
+          </div>
         </div>
       </section>
     </>
   )
 }
 
-export default Music
+export default Events
