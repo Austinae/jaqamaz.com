@@ -52,7 +52,7 @@
 }
 
 .home {
-	background-image: url('../../assets/images/group_photo_bg.jpg');
+	/* background-image: url('../../assets/images/group_photo_bg.jpg'); */
   background-size: cover;
   background-repeat: repeat;
   flex-direction: column;

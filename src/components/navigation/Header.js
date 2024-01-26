@@ -10,17 +10,17 @@ import JaqamazLogo from '../../assets/images/jaqamaz_logo.svg'
 import BirdSinging from '../../assets/audio/bulbul.mp3'
 
 const options = [
-  { value: 'ar', label: "اَلْعَرَبِيَّةُ - ar"},
-  { value: 'de', label: "Deutsch - de"},
+  // { value: 'ar', label: "اَلْعَرَبِيَّةُ - ar"},
+  // { value: 'de', label: "Deutsch - de"},
   { value: 'en',label: "English - en"},
-  { value: 'fr', label: "Français - fr"}
+  // { value: 'fr', label: "Français - fr"}
 ]
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false)
   const [userInteracted, setUserInteracted] = useState(false)
   const { t, i18n } = useTranslation()
-  const [language, setLanguage] = useState(options.filter((item)=>item.value==i18n.language))
+  const [language, setLanguage] = useState("en")
 
   const audioRef = useRef(new Audio(BirdSinging))
 
@@ -80,8 +80,8 @@ const Header = () => {
             <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/about">Team</NavLink></li>
             <li><NavLink onClick={() => setShowNavbar(!showNavbar)} to="/events">{t('events.title')}</NavLink></li>
           </ul>
-          <div className="language-selector" onClick={() => {i18n.changeLanguage(language == "en" ? "fr" : "en"); setLanguage(language == "en" ? "fr" : "en")}}>
-            <img style={{width: '30px'}} src={language == "en" ? GBFlag : FRFlag}/>
+          <div className="language-selector" onClick={() => {i18n.changeLanguage("en"); setLanguage("en")}}>
+            <img style={{width: '30px'}} src={GBFlag}/>
           </div>
         </div>
       </div>

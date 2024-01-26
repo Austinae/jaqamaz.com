@@ -2,7 +2,6 @@ import PageTitle from '../basics/PageTitle'
 import { useTranslation } from 'react-i18next'
 
 import './home.css'
-import Countdown from './Countdown'
 import GroupPhoto from '../../assets/images/group_photo2hd.jpg'
 import Wave from '../../assets/images/wavetest.svg'
 import Instagram from '../../assets/images/icons/instagram.svg'
@@ -37,19 +36,18 @@ const Home = () => {
         </div>
       </div>
       <div className="classic-flex home">
-        <img className="wave" src={Wave} alt="Wave" />
         <div className="new-album">
           <p style={{ textAlign: 'center', marginTop: '20px', marginBottom: '20px' }}>
-            We are excited to announce that our new album is coming out in <b>February 1st 2024</b>
+            We are excited to announce that our new album is coming out <b>soon</b>
           </p>
-          <Countdown date={album_release_date} />
+          {/* <Countdown date={album_release_date} /> */}
           {/* <Countdown date="16 Jan 2024 18:13 UTC+1" /> */}
           <div className='classic-flex album'>
             <div className="classic-flex music-image-container">
               <img src={MusicImage} className="music-image" alt="music" />
             </div>
             <div>
-              <h4 style={{ textDecoration: 'underline', marginBottom: '10px'}}>Tracklist</h4>
+              {/* <h4 style={{ textDecoration: 'underline', marginBottom: '10px'}}>Tracklist</h4>
               <ol className='tracklist'>
                 <li>1. Sahara</li>
                 <li>2. Pyramide</li>
@@ -60,14 +58,14 @@ const Home = () => {
                 <li>7. El Furat</li>
                 <li>8. Intimate Danse</li>
                 <li>9. Hanine</li>
-              </ol>
+              </ol> */}
             </div>
           </div>
-          <div>
+          {/* <div>
             <a href="https://www.kickstarter.com/projects/923365875/jaqamaz-a-musical-crossroad-in-brussels">
               {new Date(album_release_date) - new Date() > 0 ? "Preorder now" : "Order now"}
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="classic-flex title">
           <h1 id="jaqamaz-title">Presentation of Jaqâmaz</h1>

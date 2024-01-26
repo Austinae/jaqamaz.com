@@ -141,7 +141,7 @@ const Events = () => {
   return (
     <>
       <PageTitle title="Events" />
-      <div className="custom-bg" />
+      {/* <div className="custom-bg" /> */}
       <section className="classic-flex events" style={{ flexDirection: 'column'}}>
         <div className="events-container">
           <h2>{t('upcoming-events')}</h2>
