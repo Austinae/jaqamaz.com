@@ -46,19 +46,32 @@ const Home = () => {
             <div className="classic-flex music-image-container">
               <img src={MusicImage} className="music-image" alt="music" />
             </div>
+            {/* <h4 style={{ textDecoration: 'underline', marginBottom: '10px'}}>Tracklist</h4>
+            <ol className='tracklist'>
+              <li>1. Sahara</li>
+              <li>2. Pyramide</li>
+              <li>3. Anyway</li>
+              <li>4. Julietta</li>
+              <li>5. Tony on March</li>
+              <li>6. Ya lille</li>
+              <li>7. El Furat</li>
+              <li>8. Intimate Danse</li>
+              <li>9. Hanine</li>
+            </ol> */}
             <div>
-              {/* <h4 style={{ textDecoration: 'underline', marginBottom: '10px'}}>Tracklist</h4>
-              <ol className='tracklist'>
-                <li>1. Sahara</li>
-                <li>2. Pyramide</li>
-                <li>3. Anyway</li>
-                <li>4. Julietta</li>
-                <li>5. Tony on March</li>
-                <li>6. Ya lille</li>
-                <li>7. El Furat</li>
-                <li>8. Intimate Danse</li>
-                <li>9. Hanine</li>
-              </ol> */}
+              There are several composers in Jaqâmaz, Juliette, Hussein and Joachim.
+              The 9 songs of this album are testimonies of the inner worlds through
+              which the five musicians navigate. In this journey it is as if each
+              composer invited the others to be flown to a different planet, by
+              bringing his own colors, his own vision, delicate, strange, enthusiastic,
+              surprised, playful... Each artist expresses himself through written music
+              as well as improvisation. These two approach to music allow to sketch
+              different atmospheres and sceneries. From large and deserted
+              landscapes to dense forests full of life, yet we can’t forget our initial
+              environment: the urban world.
+            </div>
+            <div>
+              This album has been recorded at Jet Studio in Brussels and mixed by Alain Steenhoudt.
             </div>
           </div>
           {/* <div>
@@ -70,7 +83,6 @@ const Home = () => {
         <div className="classic-flex title">
           <h1 id="jaqamaz-title">Presentation of Jaqâmaz</h1>
         </div>
-        <hr></hr>
         <div id="synopsis">
             What would it sound like if we mixed some inspiration from
             traditional music with the abstract textures of contemporary
